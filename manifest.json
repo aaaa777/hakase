@@ -1,0 +1,35 @@
+{
+    "manifest_version": 3,
+    "name": "hakase",
+    "description": "hakase",
+    "version": "0.0.1",
+    "content_scripts": [
+        {
+            "js": ["dist/cs.js"],
+            "css": ["dist/cs.css"],
+            "matches": [
+                "http://www.example.com/",
+                "https://www.google.com/*",
+                "https://qiita.com/*"
+            ]
+        },
+        {
+            "js": ["dist/sshc.js"],
+            "css": ["dist/cs.css"],
+            "matches":[
+                "<all_urls>"
+            ]
+        }
+    ],
+
+    "background": {
+        "service_worker": "dist/bg.js"
+    },
+
+    "web_accessible_resources": [
+        {
+          "resources": ["*"],
+          "matches": ["<all_urls>"]
+        }
+    ]
+}
